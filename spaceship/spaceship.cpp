@@ -12,7 +12,7 @@ struct Ints {
   int b;
 
   // The spaceship operator allows us avoid a bunch of boilerplate code!
-  auto operator<=>(const Ints &i) const = default;
+  auto operator<=>(const Ints&) const = default;
 
   // Having to implement all operations like this would be a hassle!
   /*
