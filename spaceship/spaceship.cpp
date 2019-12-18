@@ -12,10 +12,10 @@ struct Ints {
   int b;
 
   // The spaceship operator allows us avoid a bunch of boilerplate code!
-  //auto operator<=>(const Ints&) const = default;
+  auto operator<=>(const Ints&) const = default;
 
   // Having to implement all operations like this would be a hassle!
-
+  /*
   bool operator<(const Ints &i) {
     // Compare a's, then b's
     if (a < i.a || (a == i.a && b < i.b)) {
@@ -24,7 +24,7 @@ struct Ints {
       return false;
     }
   }
-
+  */
 };
 
 int main() {
