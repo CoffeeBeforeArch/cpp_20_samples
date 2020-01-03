@@ -12,19 +12,18 @@ using namespace std::literals;
 template <typename T>
 concept EqualityComparable = requires(T a, T b) {
   // We can check if the result of the expression is convertible to a bool
-  { a == b }
-  ->std::convertible_to<bool>;
+  //{ a == b }
+  //->std::convertible_to<bool>;
   // We can also use another concept!
-  // a == b; requires std::boolean<decltype(a == b)>;
+  a == b; requires std::boolean<decltype(a == b)>;
 };
 
 // Here's are function we use the concept with
 // We can use our concept, or the standard one
-template <std::EqualityComparable T>
+template <EqualityComparable T>
 // template <std::equality_comparable T>
 void f(T&& t1) {
-  T t2;
-  if (t1 == t2) {
+  if (t1 == t1) {
     // Empty function body
   }
 }

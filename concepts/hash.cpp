@@ -20,20 +20,20 @@ concept Hashable = requires(T a) {
 };
 
 // Here's a function where we use the concept
-template <typename  T>
+template <Hashable T>
 void func(T a) {
   std::cout << "Hash of type = " << std::hash<T>{}(a) << '\n';
 };
 
 // Here's an empty struct
-// There's no data members, so the size is 0 (nothing to hash!)
 struct empty_struct {};
 
 int main() {
   // We can hash a string...
   func("abc"s);
   // But we can't hash our empty_struct!
-  func(empty_struct{});
+  empty_struct e;
+  func(e);
 
   return 0;
 }
