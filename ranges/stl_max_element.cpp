@@ -1,4 +1,4 @@
-// This program shows off STL sort in C++
+// This program shows off STL max element in C++
 // By: Nick from CoffeeBeforeArch
 
 #include <algorithm>
@@ -19,24 +19,15 @@ int main() {
   std::uniform_int_distribution<int> dist(0, 255);
 
   // Generate our random inputs
-  std::ranges::generate(v, [&]() { return dist(rng); });
-
-  // Dump the potentially unsorted contents
-  std::cout << "Before: ";
-  for (auto i : v) {
-    std::cout << i << " ";
-  }
+  std::generate(begin(v), end(v), [&]() { return dist(rng); });
+  
+  // Print the vector
+  std::cout << "Elements in v: ";
+  for (auto e : v) std::cout << e << " ";
   std::cout << '\n';
 
-  // Sort the vector
-  std::ranges::sort(v);
-
-  // Dump the sorted contents
-  std::cout << "After: ";
-  for (auto i : v) {
-    std::cout << i << " ";
-  }
-  std::cout << '\n';
+  // Find the max element
+  std::cout << "Max Element = " << *(std::ranges::max_element(v)) << '\n';
 
   return 0;
 }
