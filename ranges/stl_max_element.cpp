@@ -19,8 +19,8 @@ int main() {
   std::uniform_int_distribution<int> dist(0, 255);
 
   // Generate our random inputs
-  std::generate(begin(v), end(v), [&]() { return dist(rng); });
-  
+  std::ranges::generate(v, [&]() { return dist(rng); });
+
   // Print the vector
   std::cout << "Elements in v: ";
   for (auto e : v) std::cout << e << " ";

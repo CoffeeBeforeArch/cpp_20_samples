@@ -23,9 +23,7 @@ int main() {
 
   // Dump the potentially unsorted contents
   std::cout << "Before: ";
-  for (auto i : v) {
-    std::cout << i << " ";
-  }
+  for (auto i : v) std::cout << i << " ";
   std::cout << '\n';
 
   // Sort the vector
@@ -33,9 +31,8 @@ int main() {
 
   // Dump the sorted contents
   std::cout << "After: ";
-  for (auto i : v) {
-    std::cout << i << " ";
-  }
+  for (auto i : v) std::cout << i << " ";
+
   std::cout << '\n';
 
   return 0;
