@@ -1,6 +1,7 @@
-import helloworld;
+// Import our greeter module
+import hello;
 
 int main() {
-  hello();
+  greeter("world");
   return 0;
 }
